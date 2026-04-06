@@ -1,0 +1,15 @@
+<h2>Teachers</h2>
+
+<form method="POST">
+    Name: <input type="text" name="name">
+    Subject: <input type="text" name="subject">
+    <button type="submit">Add</button>
+</form>
+
+<ul>
+    {% for teacher in teachers %}
+    <li>{{ teacher.name }} - {{ teacher.subject }}</li>
+    {% endfor %}
+</ul>
+
+<a href="/">Back</a>

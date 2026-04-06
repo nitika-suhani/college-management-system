@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Marks</h3>
+<a href="/add_marks" class="btn btn-success">Add Marks</a>
+<table class="table">
+<tr>
+<th>Student</th>
+<th>Course</th>
+<th>Marks</th>
+<th>Grade</th>
+</tr>
+
+{% for m in marks %}
+<tr>
+<td>{{ m.name }}</td>
+<td>{{ m.course_name }}</td>
+<td>{{ m.marks }}</td>
+<td>
+{% if m.marks >= 90 %} A
+{% elif m.marks >= 75 %} B
+{% elif m.marks >= 50 %} C
+{% else %} Fail
+{% endif %}
+</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

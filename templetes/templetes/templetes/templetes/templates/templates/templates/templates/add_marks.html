@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Add Marks</h3>
+<form method="POST">
+    <select name="student" class="form-control">
+        {% for s in students %}
+        <option value="{{ s.id }}">{{ s.name }}</option>
+        {% endfor %}
+    </select><br>
+
+    <select name="course" class="form-control">
+        {% for c in courses %}
+        <option value="{{ c.id }}">{{ c.course_name }}</option>
+        {% endfor %}
+    </select><br>
+
+    <input type="number" name="marks" class="form-control"><br>
+    <button class="btn btn-primary">Add</button>
+</form>
+{% endblock %}

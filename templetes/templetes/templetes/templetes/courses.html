@@ -1,0 +1,15 @@
+<h2>Courses</h2>
+
+<form method="POST">
+    Name: <input type="text" name="name">
+    Duration: <input type="text" name="duration">
+    <button type="submit">Add</button>
+</form>
+
+<ul>
+    {% for course in courses %}
+    <li>{{ course.name }} - {{ course.duration }}</li>
+    {% endfor %}
+</ul>
+
+<a href="/">Back</a>
